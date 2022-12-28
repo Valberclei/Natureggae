@@ -1,0 +1,57 @@
+{% extends 'core_01/base_t1000.html' %}
+
+{% block title %}Bem vindo{% endblock title %}
+{% load meus_filtros %}
+
+{% block conteudo %}
+<br>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form_candidato.nome.errors }}
+        <label>Nome: </label>
+    {{ form_candidato.nome|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.sexo.errors }}
+        <label>Sexo: </label>
+    {{ form_candidato.sexo|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.idade.errors }}
+        <label>Idade: </label>
+    {{ form_candidato.idade|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.nivel.errors }}
+        <label>Nivel: </label>
+    {{ form_candidato.nivel|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.formacao.errors }}
+        <label>Formação: </label>
+    {{ form_candidato.formacao|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.pix.errors }}
+        <label>PIX: </label>
+    {{ form_candidato.pix|addclass:'form-control' }}
+    </div>
+
+    <div class="form-group">
+        {{ form_candidato.celular.errors }}
+        <label>Celular: </label>
+    {{ form_candidato.celular|addclass:'form-control' }}
+    </div><br>
+
+    <div>
+       <button class="py-2 px-6 rounded-xl text-white bg-gray-500 hover:bg-gray-700">Pronto</button>
+    </div>
+    <br>
+</form>
+{% endblock conteudo %}

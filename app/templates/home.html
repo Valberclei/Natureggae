@@ -1,0 +1,51 @@
+{% extends 'base_01.html' %}
+
+{% block conteudo %}
+<div class="form-content my-3 p-3">
+    <div class="container">
+        <div class="row-justify-content-center">
+            <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                <div class="card-header justify-content-center">
+                <h1>Seja bem vindo ao nosso ambiente de desenvolvimento!</h1>
+
+                <h5 class="font-wieght-light my-1 text-left">Esse sistema está sendo
+                desenvolvido usando tecnologia de ponta para se tornar algo bom para
+                pessoas que procuram praticidade no atendimento de suas demandas.
+                Se você é um desenvolvedor free-lancer ou um aluno que busca se profissionalizar
+                candidate-se para fazer parte do nosso time de desenvolvimento. As tarefas
+                e etapas que serão direcionadas para free-lancers terá uma descrição com
+                um valor que poderá ser renegociado de acordo com o trabalho a se realizar. As
+                    tarefas definirão também o nível profissional a qual o candidato irá pertencer caso seja
+                    contratado.<br><br>
+                    <b>Após se candidatar você será redirecionado para a página de
+                        registro do sistema. Boa sorte!</b>
+                        <hr>
+                </h5><h6>Maiores informações serão passadas oportunamente<br>
+                Att: O CEO</h6><h7>Valberclei Pereira Campos</h7>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul>
+    {% for post in object_list %}
+     <div class="btn btn-secondary">
+       <div>
+         <h2>{{ post.title }}</h2>
+         <img src="{{ post.cover.url }}" alt="{{ post.title }}">
+       </div>
+     </div>
+    {% endfor %}
+
+</ul>
+    <div class="form-content my-3 p-3">
+      <div class="container">
+        <div class="row-justify-content-center">
+    <a href="{% url 'cadastrar_candidato' %}"><input type="button" class="btn btn-primary mb3" value="Candidatar-se"></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+{% endblock conteudo %}

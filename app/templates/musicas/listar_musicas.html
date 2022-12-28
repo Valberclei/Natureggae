@@ -1,0 +1,35 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Album{% endblock title %}
+{% load static %}
+
+{% block conteudo %}
+
+<br>
+<div class="max-w-6xl mx-auto  p-6">
+  <div class="card-body">
+    <h1 class="mb-5 text-3xl">Álbum completo</h1>
+    <div class="mb-6">
+       <a href="{% url 'player' %}" class="inline-block mt-4 py-4 px-6 rounded-xl text-white bg-purple-500">Ouvir</a>
+    </div>
+    {% for musica in musicas %}
+
+    <br>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{musica.titulo}}
+            </h5><br>
+            <hr><br>
+            <a href="{% url 'editar_musica' musica.id %}">Alterar música</a>
+            <a href="{% url 'remover_musica' musica.id %}">Remover música</a>
+
+        </div>
+    </div>
+    {% endfor %}
+    <br>
+    <div class="mb-6">
+       <a href="{% url 'cadastrar_musica' %}" class="inline-block mt-4 py-4 px-6 rounded-xl text-white bg-purple-500">Cadastrar música</a>
+    </div>
+    <br>
+  </div>
+</div>
+{% endblock conteudo %}
