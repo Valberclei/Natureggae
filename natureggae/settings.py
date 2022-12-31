@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'product',
     'cart',
     'order',
-
 ]
 
 MIDDLEWARE = [
@@ -84,6 +83,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'natureggae.wsgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
