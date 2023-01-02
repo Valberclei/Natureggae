@@ -2,7 +2,6 @@ from django.shortcuts import render
 
 from django.core.paginator import Paginator
 from .models import Song
-from tkinter import messagebox
 
 def player(request):
     paginator = Paginator(Song.objects.all(), 1)
