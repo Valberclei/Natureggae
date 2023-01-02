@@ -45,7 +45,7 @@ def start_order(request):
 
     first_name = data['first_name']
     last_name = data['last_name']
-    email = data['email']
+    email = data['emails']
     address = data['address']
     zipcode = data['zipcode']
     place = data['place']

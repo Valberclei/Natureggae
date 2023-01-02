@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'newusers',
-    'canddt',
     'somusic',
     'crispy_forms',
     'core_01',
@@ -83,19 +82,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'natureggae.wsgi.application'
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels.layers.InMemoryChannelLayer'
-    }
-}
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'boladinho',
+        'NAME': 'zappling',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
