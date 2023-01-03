@@ -1,4 +1,3 @@
-from django.contrib import admin
 from django.urls import path
 from .views.musica_views import *
 from .views.usuario_views import *

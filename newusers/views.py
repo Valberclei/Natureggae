@@ -63,11 +63,11 @@ class RegisterView(View):
     initial = {'key': 'value'}
     template_name = 'users/register.html'
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         form = self.form_class(request.POST)
 
         if form.is_valid():
