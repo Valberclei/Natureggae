@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'newusers',
-    'somusic',
     'crispy_forms',
     'core_01',
     'product',

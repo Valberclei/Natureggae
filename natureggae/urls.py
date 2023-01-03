@@ -10,7 +10,6 @@ urlpatterns = [
     path('order/', include('order.urls')),
     path('', include('core_01.urls')),
     path('', include('newusers.urls')),
-    path('', include("somusic.urls")),
 ]
 
 if settings.DEBUG:
