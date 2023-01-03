@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'natureggae.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'zappling',
+        'NAME': 'dakota',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
