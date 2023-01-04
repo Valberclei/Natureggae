@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'natureggae.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ponta',
         'USER': 'root',
         'PASSWORD': 'root',
