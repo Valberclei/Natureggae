@@ -3,7 +3,6 @@ import stripe
 
 from django.conf import settings
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
 
 from cart.cart import Cart
 
@@ -45,7 +44,7 @@ def start_order(request):
 
     first_name = data['first_name']
     last_name = data['last_name']
-    email = data['emails']
+    email = data['email']
     address = data['address']
     zipcode = data['zipcode']
     place = data['place']

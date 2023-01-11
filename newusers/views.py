@@ -44,7 +44,7 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
                       "if an account exists with the email you entered. You should receive them shortly." \
                       " If you don't receive an email, " \
                       "please make sure you've entered the address you registered with, and check your spam folder."
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('login')
 
 
 class CustomLoginView(LoginView):
@@ -63,11 +63,11 @@ class RegisterView(View):
     initial = {'key': 'value'}
     template_name = 'users/register.html'
 
-    def get(self, request):
+    def get(self, request, *args, **kwargs):
         form = self.form_class(initial=self.initial)
         return render(request, self.template_name, {'form': form})
 
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
 
         if form.is_valid():

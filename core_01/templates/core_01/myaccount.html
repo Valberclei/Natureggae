@@ -6,8 +6,8 @@
     <h1 class="mb-5 text-3xl">Minha conta</h1>
 
     <div class="mb-6">
-        <strong>Name: </strong>{{ request.user.get_full_name }}<br>
-        <strong>Username: </strong>{{ request.user.username }} <br>
+        <strong>Nome: </strong>{{ request.user.get_full_name }}<br>
+        <strong>Apelido: </strong>{{ request.user.username }}<br>
         <strong>E-mail: </strong>{{ request.user.email }}<br>
         <a href="{% url 'edit_myaccount' %}" class="inline-block mt-4 py-2 px-6 rounded-xl text-white bg-purple-500">Editar</a>
     </div>

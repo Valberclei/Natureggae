@@ -1,0 +1,70 @@
+{% extends 'core_01/base_t1000.html' %}
+{% load meus_filtros %}
+
+{% block title %}Formulário{% endblock title %}
+
+{% block conteudo %}
+
+   <div class="max-w-6xl mx-auto  p-6">
+     <h1 class="mb-5 text-3xl">Trabalhe conosco</h1>
+       <div class="mb-6">
+       <p>Olá, {{ request.user.get_username }}! Como vai? Preencha o formulário
+         para se candidatar a uma vaga na nossa equipe, mas fique atento
+         pois por enquanto temos vagas apenas para <strong>músicos</strong>, <strong>programadores</strong>
+         ou <strong>seguranças</strong>, okay? Vamos lá!<br>
+       </div>
+   </div>
+
+   <form method="post">
+       {% csrf_token %}
+     <div class="max-w-6xl mx-auto  p-6">
+       <div class="form-group">
+       {{ form_worker.nome.errors }}
+       <label>Nome: </label>
+       {{ form_worker.nome|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.email.errors }}
+       <label>Email: </label>
+       {{ form_worker.email|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.address.errors }}
+       <label>Endereço: </label>
+       {{ form_worker.address|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.data_nas.errors }}
+       <label>Data de nascimento: </label>
+       {{ form_worker.data_nas|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.sex.errors }}
+       <label>Sexo: </label>
+       {{ form_worker.sex|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.area.errors }}
+       <label>Area de atuação: </label>
+       {{ form_worker.area|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.level.errors }}
+       <label>Nível: </label>
+       {{ form_worker.level|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       {{ form_worker.phone.errors }}
+       <label>Celular: </label>
+       {{ form_worker.phone|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+       <label>Redes sociais: </label>
+       {{ form_worker.link_social|addclass:'form-control' }}
+       </div>
+       <div class="form-group">
+        <input type="submit" class="inline-block mt-4 py-2 px-6 rounded-xl text-white bg-purple-500">
+       </div>
+     </div>
+   </form>
+{% endblock conteudo %}

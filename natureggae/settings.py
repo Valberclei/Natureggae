@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,8 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGOUT_REDIRECT_URL = '/frontpage'
-LOGIN_REDIRECT_URL = '/frontpage'
+LOGOUT_REDIRECT_URL = '/homepage'
+LOGIN_REDIRECT_URL = '/homepage'
 LOGIN_URL = '/login/'
 
 # Application definition
@@ -44,11 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'newusers',
+    'somusic',
     'crispy_forms',
     'core_01',
     'product',
     'cart',
     'order',
+    'worker',
 ]
 
 MIDDLEWARE = [
@@ -87,8 +88,8 @@ WSGI_APPLICATION = 'natureggae.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ponta',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'rollow',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',
@@ -143,8 +144,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

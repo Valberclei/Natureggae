@@ -1,0 +1,19 @@
+{% extends 'core_01/base_t1000.html' %}
+
+{% block title %}Cadastro{% endblock title %}
+
+{% block conteudo %}
+{% for worker in workers %}
+<div class="card mb-3">
+    <div class="card-header">
+         {{ worker.get_area_display }}
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><label>Nome: {{ worker.nome }}</label></h5>
+        <p class="card-text"><label>Nível: {{ worker.get_level_display }}</label><br><label>Sexo: {{ worker.get_sex_display }}</label><br>
+            <label> Contato: {{ worker.phone }}</label><br>{{ worker.email }}<br>{{ worker.data_nas }}<br>{{ worker.address }}<br>{{ worker.link_social }}</p>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock conteudo %}
