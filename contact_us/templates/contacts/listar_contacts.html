@@ -1,0 +1,18 @@
+{% extends 'core_01/base_t1000.html' %}
+
+{% block title %}Mensagens{% endblock title %}
+
+{% block conteudo %}
+{% for contact in contacts %}
+<div class="card mb-3">
+    <div class="card-header">
+        <label><strong>Nome: </strong>{{ contact.nome }}</label><br>
+        <label><strong>Email: </strong> {{ contact.email }}</label>
+    </div>
+    <div class="card-body">
+            <p class="card-text"><label><strong>Mensagem: </strong>{{ contact.message }}<br>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock conteudo %}

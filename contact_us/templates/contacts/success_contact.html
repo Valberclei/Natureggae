@@ -1,0 +1,13 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Success{% endblock title %}
+
+{% block conteudo %}
+   <header class="px-6 py-10 lg:py-90 bg-purple-500">
+          <div class="max-w-3xl mx-auto text-center">
+                <p class="mb-2 text-3xl lg:text-5xl text-white">Obrigado pelo contato!</p><br>
+                <p class="mb-10 text-white">Sua mensagem foi enviada com sucesso<br>
+                <small>A resposta será enviada no seu email.</small></p>
+                <a href="{% url 'shop' %}" class="inline-block px-8 py-4 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Já viu a nossa loja?</a>
+          </div>
+   </header>
+{% endblock conteudo %}

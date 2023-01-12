@@ -1,0 +1,40 @@
+{% extends 'core_01/base_t1000.html' %}
+{% load meus_filtros %}
+{% block title %}Mensagem{% endblock title %}
+
+{% block conteudo %}
+    <header class="px-6 py-6 lg:py-90 bg-purple-500">
+       <div class="max-w-3xl mx-auto text-center">
+          <p class="mb-2 text-3xl lg:text-5xl text-white">Fale conosco</p>
+          <div class="mb-6">
+          <p class="mb-10 text-2xl text-white">Olá, {{ request.user.get_username }}! Como vai? Preencha o formulário
+          para se comunicar com a nossa equipe. Você pode também entrar em contato
+          através do nosso whatsapp (74) 999223236</p><br>
+          <a href="{% url 'homepage' %}" class="inline-block px-8 py-2 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Cancelar</a>
+          </div>
+       </div>
+    </header>
+<form method="post">
+    {% csrf_token %}
+  <div class="max-w-6xl mx-auto  p-6">
+    <div class="form-group">
+    {{ form_contact.nome.errors }}
+    <label>Nome: </label>
+    {{ form_contact.nome|addclass:'form-control' }}
+    </div>
+    <div class="form-group">
+    {{ form_contact.email.errors }}
+    <label>Email: </label>
+    {{ form_contact.email|addclass:'form-control' }}
+    </div>
+    <div class="form-group">
+    {{ form_contact.message.errors }}
+    <label>Mensagem: </label>
+    {{ form_contact.message|addclass:'form-control' }}
+    </div>
+    <div class="form-group">
+       <input type="submit" class="inline-block mt-4 py-2 px-6 rounded-xl text-white bg-purple-500">
+    </div>
+  </div>
+</form>
+{% endblock conteudo %}
