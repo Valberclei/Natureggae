@@ -23,3 +23,6 @@ def atualizar_worker(worker_bd, worker_novo):
     worker_bd.phone = worker_novo.phone
     worker_bd.link_social = worker_novo.link_social
     worker_bd.save(force_update=True)
+
+def remover_worker(worker_bd):
+    worker_bd.delete()

@@ -12,6 +12,8 @@
         <h5 class="card-title"><label>Nome: {{ worker.nome }}</label></h5>
         <p class="card-text"><label>Nível: {{ worker.get_level_display }}</label><br><label>Sexo: {{ worker.get_sex_display }}</label><br>
             <label> Contato: {{ worker.phone }}</label><br>{{ worker.email }}<br>{{ worker.data_nas }}<br>{{ worker.address }}<br>{{ worker.link_social }}</p>
+        <hr>
+        <a href="{% url 'remover_worker' worker.id %}">Excluir candidato</a>
     </div>
 </div>
 {% endfor %}

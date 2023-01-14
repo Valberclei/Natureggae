@@ -53,3 +53,10 @@ def atualizar_worker(request, id):
         workers_services.atualizar_worker(worker_bd, worker_novo)
         return redirect('success')
     return render(request, 'workers/form_worker.html', {"form_worker": form_worker})
+
+def remover_worker(request, id):
+    worker_bd = workers_services.listar_worker_id(id)
+    if request.method == "POST":
+        workers_services.remover_worker(worker_bd)
+        return redirect('listar_workers')
+    return render(request, 'workers/confirma_exclusao.html', {'worker': worker_bd})

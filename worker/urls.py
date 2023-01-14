@@ -6,5 +6,6 @@ urlpatterns = [
     path('cadastrar_worker/', cadastrar_worker, name='cadastrar_worker'),
     path('success/', success, name='success'),
     path('atualizar_worker/<int:id>', atualizar_worker, name='atualizar_worker'),
+    path('remover_worker/<int:id>', remover_worker, name='remover_worker'),
 
 ]

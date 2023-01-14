@@ -1,0 +1,25 @@
+{% extends 'core_01/base_t1000.html' %}
+
+{% block title %}Bem vindo{% endblock title %}
+
+{% block conteudo %}
+<header class="px-6 py-10 lg:py-90 bg-purple-500">
+   <div class="max-w-3xl mx-auto text-center">
+       <p class="mb-2 text-3xl lg:text-5xl text-white">Excluir Candidato</p>
+       <p class="mb-10 text-white">Tem certeza que quer deletar o candidato abaixo?</p>
+       <a href="{% url 'listar_workers' %}" class="inline-block px-8 py-4 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Cancelar</a>
+   </div>
+</header>
+<div class="card-mb3">
+    <div class="card-body">
+        <h5 class="card-title">{{ worker.get_area_display }}</h5>
+        <p class="card-text"><label><strong>Nome: </strong>{{ worker.nome }}</label></p><br>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <br>
+            <button class="btn btn-danger px-6 rounded-xl text-white bg-gray-500 hover:bg-red-700" type="submit">Excluir</button>
+        </form>
+    </div>
+</div>
+{% endblock conteudo %}

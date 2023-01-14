@@ -10,7 +10,9 @@
         <label><strong>Email: </strong> {{ contact.email }}</label>
     </div>
     <div class="card-body">
-            <p class="card-text"><label><strong>Mensagem: </strong>{{ contact.message }}<br>
+        <p class="card-text"><label><strong>Mensagem: </strong>{{ contact.message }}</label></p><br>
+        <hr>
+        <a href="{% url 'remover_contact' contact.id %}">Excluir mensagem</a>
     </div>
 </div>
 {% endfor %}
