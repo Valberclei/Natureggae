@@ -12,6 +12,7 @@ urlpatterns = [
     path('', include('newusers.urls')),
     path('', include("somusic.urls")),
     path('', include("worker.urls")),
+    path('', include("event.urls")),
     path('', include("contact_us.urls")),
 ]
 
