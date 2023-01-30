@@ -14,7 +14,6 @@
           <div class="menu-left flex items-center space-x-6">
               <a href="{% url 'homepage' %}" class="py-4 text-lg text-purple-500 font-semibold">Bêckas Melodia</a>
               <ul class="flex items-center space-x-4">
-                  <li><a href="{% url 'show' %}">Eventos</a></li>
                   <li><a href="{% url 'shop' %}">Shopping</a></li>
                   {% if request.user.is_authenticated %}
                      <li><a href="{% url 'logout_02' %}">Sair</a></li>

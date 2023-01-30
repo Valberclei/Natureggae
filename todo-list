@@ -1,0 +1,69 @@
+Eu como analista de sistemas web, recebi do meu chefe a tarefa de desenvolver um plano para
+a programação de um e-commerce musical para um cliente produtor de eventos sonoros. A proposta
+dada pelo meu chefe continha o exemplo abaixo:
+
+     fazer app para loja {
+          (
+             servir as páginas:
+                [
+                   front_loja.html, loja.html
+                ]
+          )
+     }
+
+     fazer app para produtos{
+          (
+             para servir as páginas das categorias de produtos:
+                [
+                  cosméticos, moda, informática, papelaria, vidraçaria
+                ]
+          )
+     }
+
+Com base no exemplo acima, como deve ser feito o sistema do nosso cliente produtor de eventos?
+
+        para servir as páginas de tipos de show:
+fazer app para show {
+     (
+        para servir as páginas:
+           [
+              show_page.html, show.html
+           ]
+     )
+}
+
+fazer app para eventos{
+     (
+           [
+             completo, participação, abertura, matinê
+           ]
+     )
+}
+
+{
+
+  fazer app para turnê
+     (
+        para servir as páginas:
+           [
+              turne_page.html, turne.html
+           ]
+     )
+
+  fazer app para eventos
+     (
+        para servir as páginas das categorias de eventos:
+           [
+             show, participação, abertura, matinê
+           ]
+     )
+
+}
+
+*Dica:*
+      Se(produto == entidade) {
+         evento = produto;
+         evento = show.abertura, show.participação, show.matine, show.completo;
+
+         System.print("produto")
+      }
