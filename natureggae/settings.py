@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'worker',
     'contact_us',
     'tour',
+    'evento',
 ]
 
 MIDDLEWARE = [

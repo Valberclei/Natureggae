@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Show_tipo, Tourne
 
-# Register your models here.
+admin.site.register(Show_tipo)
+admin.site.register(Tourne)
