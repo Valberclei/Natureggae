@@ -3,11 +3,17 @@
 
 {% block conteudo %}
 <div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+    {% if cart %}
     <div class="products w-full lg:w-3/4">
     {% for item in cart %}
         {% include 'cart/partials/cart_item.html' %}
     {% endfor %}
     </div>
+    {% else %}
+    <div class="products w-full lg:w-3/4">
+        <h1 class="mb-5 text-3xl py-4 text-red-500 font-bold"><strong>Seu carrinho está vaziu</strong></h1>
+    </div>
+    {% endif %}
 
     <div class="sumary w-full md:w-1/4 p-6 bg-gray-100 rounded-xl mt-3">
         <h2 class="uppercase text-lg mb-5">Sumary</h2>
