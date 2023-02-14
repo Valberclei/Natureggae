@@ -8,12 +8,21 @@
         <img class="rounded-xl" src="1.jpg">
     </div>
 
-    <div class="information w-full lg:w-2/5 lg:p-6">
-        <h1 class="text-2xl">Local Evento</h1>
-        <p class="mt-6 text-gray-700">Loren ipsum dolar ipsum amet. Loren ipsum dolar ipsum amet. Loren ipsum dolar ipsum amet.</p>
+    <div class="informations w-full lg:w-2/5 lg:p-6">
+        <h1 class="text-2xl">{{ evento.name }}</h1>
+
+        <p class="mt-1 text-gray-400">VIP $ {{ evento.get_display_price }}</p>
+
+        {% if evento.description %}
+        <p class="mt-6 text-gray-700">
+            {{ evento.description }}
+        </p>
+        {% endif %}
+
         <a href="#" class="mt-6 inline-block px-8 py-4 rounded-xl bg-purple-500 text-white hover:bg-purple-700">
             Ingresso
         </a>
     </div>
 </div>
+
 {% endblock conteudo %}

@@ -1,0 +1,22 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Turnê{% endblock %}
+
+{% block conteudo %}
+
+<header class="px-6 py-10 lg:py-90 bg-purple-500">
+    <div class="max-w-3xl mx-auto text-center">
+        <p class="mb-2 text-3xl lg:text-5xl text-white">Turnê</p>
+        <p class="mb-10 text-white">Aqui você pode conferir os eventos</p>
+        <a href="{% url 'shop' %}" class="inline-block px-8 py-4 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Turnê</a>
+    </div>
+</header>
+
+<div class="max-w-6xl mx-auto py-2 px-6 xl:px-0">
+    <div class="products flex items-center flex-wrap">
+        {% for evento in eventos %}
+            {% include 'evento/partials/evento_list_item.html' %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock conteudo %}

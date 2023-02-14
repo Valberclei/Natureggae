@@ -1,9 +1,8 @@
 from django.db import models
 
-class Show_tipo(models.Model):
-    name = models.CharField(max_length=30)
+class Category(models.Model):
+    name = models.CharField(max_length=25)
     slug = models.SlugField()
-    local = models.CharField(max_length=100)
 
     class Meta:
         ordering = ('name',)
@@ -11,17 +10,19 @@ class Show_tipo(models.Model):
     def __str__(self):
         return self.name
 
-class Tourne(models.Model):
-
-    show_tipo = models.ForeignKey(Show_tipo, related_name='tourne', on_delete=models.CASCADE)
-    name = models.CharField(max_length=30)
+class Evento(models.Model):
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    name = models.CharField(max_length=125)
     slug = models.SlugField()
-    local = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
+    price = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ('-created_at',)
 
     def __str__(self):
-        return self.local
+        return self.name
+
+    def get_display_price(self):
+        return self.price / 100

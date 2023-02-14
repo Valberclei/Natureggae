@@ -92,7 +92,7 @@ WSGI_APPLICATION = 'natureggae.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rollow',
+        'NAME': 'pandora',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': 'localhost',

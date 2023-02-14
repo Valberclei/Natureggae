@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Show_tipo, Tourne
+from .models import Category, Evento
 
-admin.site.register(Show_tipo)
-admin.site.register(Tourne)
+admin.site.register(Category)
+admin.site.register(Evento)

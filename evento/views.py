@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-# Create your views here.
-def evento(request):
-    return render(request, 'evento/evento.html')
+from .models import Evento
+
+def evento(request, slug):
+    evento = get_object_or_404(Evento, slug=slug)
+    return render(request, 'evento/evento.html', {'evento': evento})
