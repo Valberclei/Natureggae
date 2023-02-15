@@ -5,6 +5,7 @@ from .views.usuario_views import *
 
 urlpatterns = [
     path('listar_musicas/', listar_musicas, name='listar_musicas'),
+    path('listar_musicas_publicas/', listar_musicas_publicas, name='listar_musicas_publicas'),
     path('cadastrar_musica/', cadastrar_musica, name='cadastrar_musica'),
     path('editar_musica/<int:id>', editar_musica, name='editar_musica'),
     path('remover_musica/<int:id>', remover_musica, name='remover_musica'),

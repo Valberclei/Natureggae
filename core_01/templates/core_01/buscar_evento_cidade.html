@@ -1,0 +1,22 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Shop{% endblock title %}
+
+{% block conteudo %}
+<div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+    <div class="filters w-full lg:w-1/4">
+        <h3 class="mb-3 text-xl uppercase">Pesquisa</h3>
+        <h3 class="mb-3 text-xl">Digite o nome da cidade e clique no ícone da lupa</h3>
+
+        <form method="get" action="">
+          {% include 'products/partials/product_list_search.html' %}
+        </form>
+
+    </div>
+
+    <div class="products w-full lg:w-3/4 -mt-4 flex items-center flex-wrap">
+        {% for product in products %}
+          {% include 'products/partials/product_list_item.html' %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock conteudo %}

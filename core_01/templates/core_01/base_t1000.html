@@ -15,7 +15,7 @@
               <a href="{% url 'homepage' %}" class="py-4 text-lg text-purple-500 font-semibold">Bêckas Melodia</a>
               <ul class="flex items-center space-x-4">
                   <li><a href="{% url 'tourpage' %}">Turnê</a></li>
-                  <li><a href="{% url 'shop' %}">Loja</a></li>
+                  <li><a href="{% url 'shop' %}">Bilheteria</a></li>
                   {% if request.user.is_authenticated %}
                      <li><a href="{% url 'logout_02' %}">Sair</a></li>
                   {% else %}
@@ -60,7 +60,10 @@
               <p class="text-gray-700">Novos no ramo das startups e comprometidos<br>
                   com todo suport e assistência <br>
                   aos nossos clientes </p><br>
-              </div>
+                  <a href="{% url 'listar_musicas' %}" class="text-purple-500">Admin</a><br>
+                  <a href="{% url 'listar_workers' %}" class="text-purple-500">Admin RH</a><br>
+                  <a href="{% url 'listar_contacts' %}" class="text-purple-500">Admin contt</a>
+              </div><br>
               <a href="{% url 'cadastrar_worker' %}" class="py-4 text-lg text-purple-500 font-semibold">Trabalhe conosco</a><br>
               <a href="{% url 'enviar_contact' %}" class="py-4 text-lg text-purple-500 font-semibold">Fale conosco</a>
           </div>
@@ -74,7 +77,7 @@
           </div>
       </div>
       <div class="py-8 text-center">
-           <p class="text-xs">Copyright (c) 2023 - Bêckas Melodia</p>
+           <p class="text-xs">Copyright (c) 2023 - Todos os direitos reservados Bêckas Melodia</p>
       </div>
   </footer>
 

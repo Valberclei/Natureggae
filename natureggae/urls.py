@@ -5,7 +5,6 @@ from tour.views import tourpage, tour
 from evento.views import evento
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('tourpage', tourpage, name='tourpage'),
     path('tour', tour, name='tour'),

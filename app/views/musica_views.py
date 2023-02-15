@@ -1,4 +1,4 @@
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from ..forms import MusicaForm
@@ -8,9 +8,16 @@ from ..services import musica_service
 # Create your views here.
 
 @login_required()
+@permission_required('is_superuser')
 def listar_musicas(request):
     musicas = musica_service.listar_musicas(request.user)
     return render(request, 'musicas/listar_musicas.html', {"musicas": musicas})
+
+@login_required()
+def listar_musicas_publicas(request):
+    musicas = musica_service.listar_musicas(request.user)
+    return render(request, 'musicas/listar_musicas_publicas.html', {"musicas": musicas})
+
 
 @login_required()
 def cadastrar_musica(request):
