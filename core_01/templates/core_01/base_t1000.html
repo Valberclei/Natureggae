@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
-    <title>{% block title %}{% endblock %} | Bêckas Melodia</title>
+    <title>{% block title %}{% endblock %} | Natyreggae</title>
 </head>
 <body>
   <nav class="border-b border-gray-100">
       <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
           <div class="menu-left flex items-center space-x-6">
-              <a href="{% url 'homepage' %}" class="py-4 text-lg text-purple-500 font-semibold">Bêckas Melodia</a>
+              <a href="{% url 'homepage' %}" class="py-4 text-lg text-purple-500 font-semibold">Natyreggae</a>
               <ul class="flex items-center space-x-4">
                   <li><a href="{% url 'tourpage' %}">Turnê</a></li>
                   <li><a href="{% url 'shop' %}">Bilheteria</a></li>
@@ -57,12 +57,10 @@
           <div class="footer-left mb-12 md:mb-0">
               <h2 class="mb-5 uppercase text-lg">sobre a gente</h2>
               <div class="small">
-              <p class="text-gray-700">Novos no ramo das startups e comprometidos<br>
-                  com todo suport e assistência <br>
-                  aos nossos clientes </p><br>
-                  <a href="{% url 'listar_musicas' %}" class="text-purple-500">Admin</a><br>
-                  <a href="{% url 'listar_workers' %}" class="text-purple-500">Admin RH</a><br>
-                  <a href="{% url 'listar_contacts' %}" class="text-purple-500">Admin contt</a>
+                   <p class="text-gray-700">Novos no ramo das startups e comprometidos<br>
+                       com todo suport e assistência <br>
+                       aos nossos clientes </p><br>
+                       <a href="{% url 'listar_musicas' %}" class="text-purple-500">Admin</a><br>
               </div><br>
               <a href="{% url 'cadastrar_worker' %}" class="py-4 text-lg text-purple-500 font-semibold">Trabalhe conosco</a><br>
               <a href="{% url 'enviar_contact' %}" class="py-4 text-lg text-purple-500 font-semibold">Fale conosco</a>
