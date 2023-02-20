@@ -11,6 +11,10 @@ from .forms import UpdateUserForm, UpdateProfileForm
 from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordChangeView
 
+def success_register(request):
+    return render(request, 'users/success_register.html')
+
+
 def home(request):
     return render(request, 'users/home_02.html')
 
@@ -76,7 +80,7 @@ class RegisterView(View):
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}')
 
-            return redirect(to='login')
+            return redirect(to='success_register')
 
         return render(request, self.template_name, {'form': form})
 
@@ -87,3 +91,4 @@ class RegisterView(View):
 
         # else process dispatch as it otherwise normally would
         return super(RegisterView, self).dispatch(request, *args, **kwargs)
+

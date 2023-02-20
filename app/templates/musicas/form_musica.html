@@ -1,23 +1,24 @@
-{% extends 'base_01.html' %}
+{% extends 'core_01/base_t1000.html' %}
 {% load meus_filtros %}
 {% load static %}
 
 {% block conteudo %}
 
-<br><h1>Obrigado por cadastrar seu som no nosso sistema !!!</h1><br>
-
+<br><div class="max-w-6xl mx-auto py-2 px-6 xl:px-0 flex items-center justify-between">
+        <p class="mb-2 text-3xl lg:text-3xl text-gray-700">Cadastro de Música</p><br>
+    </div>
 <form method="post">
     {% csrf_token %}
     {{ form_musica.titulo.errors }}
      <div class="form-group">
-    <label>Música: </label>
-    {{ form_musica.titulo|addclass:'form-control' }}
-    </div><br>
-    <div class="form-group">
-      <input type="submit" value="Salvar">
-    </div>
-    <p><h3>Vamos salvar sua música no nosso banco de dados, então capricha no título ok?</h3>
-    <br>
-    <img src="{% static 'images/esquilo-bonito.small.png' %}">
+        <label>Música: </label>
+        {{ form_musica.titulo|addclass:'form-control' }}
+     </div><br>
+     <div>
+        <button class="py-2 px-6 rounded-xl text-white bg-purple-500 hover:bg-purple-700">Salvar</button>
+     </div>
+    <p>Vamos salvar sua música no nosso banco de dados, então capricha no título ok?</p>
+     <br>
+     <img src="{% static 'images/esquilo-bonito.small.png' %}">
 </form>
 {% endblock conteudo %}

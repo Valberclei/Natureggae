@@ -1,0 +1,13 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Success{% endblock title %}
+
+{% block conteudo %}
+   <header class="px-6 py-10 lg:py-90 bg-purple-500">
+          <div class="max-w-3xl mx-auto text-center">
+                <p class="mb-2 text-3xl lg:text-5xl text-white">Obrigado por se cadastrar!</p><br>
+                <p class="mb-10 text-white">Agora você pode entrar com seu usuário e senha<br>
+                <small>Clique no botão abaixo para fazer login agora mesmo!</small></p>
+                <a href="{% url 'login' %}" class="inline-block px-8 py-4 rounded-xl bg-white text-purple-500 hover:bg-gray-200">Login</a>
+          </div>
+   </header>
+{% endblock conteudo %}

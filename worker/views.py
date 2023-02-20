@@ -5,7 +5,7 @@ from .entidades.worker import Worker
 from .services import workers_services
 
 def success(request):
-    return render(request, 'workers/success.html')
+    return render(request, 'workers/success_register.html')
 @login_required
 @permission_required('is_superuser')
 def listar_workers(request):

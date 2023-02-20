@@ -3,7 +3,7 @@ from .views import RegisterView
 from django.contrib.auth import views as auth_views
 from .views import CustomLoginView
 from .forms import LoginForm
-from .views import ResetPasswordView, profile
+from .views import ResetPasswordView, profile, success_register
 from .views import ChangePasswordView
 from .views import home
 
@@ -17,7 +17,7 @@ urlpatterns = [
     path('password-reset-confirm/<uidb64>/<token>/',
          auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'),
          name='password_reset_confirm'),
-
+    path('success_register/', success_register, name='success_register'),
     path('password-reset-complete/',
     auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
          name='password_reset_complete'),

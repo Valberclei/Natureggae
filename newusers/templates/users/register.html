@@ -1,4 +1,5 @@
 {% extends "core_01/base_t1000.html" %}
+{% load static %}
 {% block title %} Register Page {% endblock title%}
 {% block conteudo %}
     <div class="form-content my-3 p-3">
@@ -62,13 +63,13 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6">
-
                                         <div class="form-group">
                                             <label class="small mb-1">Confirm Password</label>
                                             {{ form.password2 }}
                                         </div>
                                     </div>
-                                </div><br>
+                                </div>
+                                <br>
                                 <div>
                                    <button class="py-2 px-6 rounded-xl text-white bg-gray-500 hover:bg-gray-700">Pronto</button>
                                 </div>

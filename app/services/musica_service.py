@@ -6,6 +6,9 @@ def cadastrar_musica(musica):
 def listar_musicas(usuario):
     return Musica.objects.filter(usuario=usuario).all()
 
+def listar_musicas_publicas():
+    return Musica.objects.all()
+
 def listar_musicas_id(id):
     return Musica.objects.get(id=id)
 

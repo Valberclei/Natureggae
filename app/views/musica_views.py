@@ -15,7 +15,7 @@ def listar_musicas(request):
 
 @login_required()
 def listar_musicas_publicas(request):
-    musicas = musica_service.listar_musicas(request.user)
+    musicas = musica_service.listar_musicas_publicas()
     return render(request, 'musicas/listar_musicas_publicas.html', {"musicas": musicas})
 
 
