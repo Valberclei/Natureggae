@@ -16,7 +16,7 @@ def cart(request):
     return render(request, 'cart/cart.html')
 
 def success(request):
-    return render(request, 'cart/success_register.html')
+    return render(request, 'cart/success_payment.html')
 
 def update_cart(request, product_id, action):
     cart = Cart(request)

@@ -1,0 +1,15 @@
+{% extends 'core_01/base_t1000.html' %}
+{% block title %}Success{% endblock title %}
+{% load static %}
+
+
+{% block conteudo %}
+   <div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
+       <div class="products w-full lg:w-3/4">
+           <h1 class="mb-5 text-3xl">Compra realizada com sucesso</h1>
+           <p>Obrigado por sua compra, o seu pedido será entrege no seu enderesso nos próximos dias</p><br>
+
+           <img src="{% static 'images/gato-bonito-viola.png' %}" align="left"><br>
+       </div>
+   </div>
+{% endblock conteudo %}
