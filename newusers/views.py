@@ -59,7 +59,7 @@ class CustomLoginView(LoginView):
 
         if not remember_me:
             self.request.session.set_expiry(0)
-            self.request.session.modified = True
+            self.request.session.modified = False
         return super(CustomLoginView, self).form_valid(form)
 
 class RegisterView(View):
